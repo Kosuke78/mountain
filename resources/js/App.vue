@@ -14,13 +14,13 @@
 
 <script>
 import { Loader } from "@googlemaps/js-api-loader";
-// import { API_KEY } from "./googlemapapi.js";
+import { API_KEY } from "./googlemapapi.js";
 
 export default {
     data() {
         return {
             loader: new Loader({
-                apiKey: "AIzaSyBIFXaIXYU0ZghFK-pn6qHRiyeNYlxE450",
+                apiKey: API_KEY,
                 version: "weekly",
                 libraries: ["places"],
             }),
