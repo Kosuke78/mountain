@@ -1,12 +1,36 @@
 <template>
     <div>
         <h1 class="title">山口県 登山MAP</h1>
+        <div class="main">
         <!-- ここにGooglemapを表示 -->
-        <div id="map" style="height:500px; width:1100px;"></div>
+        <div id="map" style="height: 500px; width: 600px"></div>
+        <div class="menu">
+            <h2 class="menu-title">情報</h2>
+            <ul>
+                <li><span class="item-heading">山名</span><p></p></li>
+                <li><span class="item-heading">標高</span><p></p></li>
+                <li><span class="item-heading">駐車場</span><p></p></li>
+                <li><span class="item-heading">備忘録</span><p></p></li>
+            </ul>
+        </div>
+        </div>
     </div>
 </template>
 
 <style>
+li {
+    list-style: none;
+}
+.main {
+    display: flex;
+    justify-content: center;
+}
+.menu-title {
+    text-align: center;
+}
+.item-heading {
+    font-weight: bold;
+}
 .title {
     text-align: center;
 }
@@ -26,10 +50,10 @@ export default {
             }),
             mapOptions: {
                 center: {
-                    lat:35.6809591,
-                    lng:139.7673068
+                    lat: 35.6809591,
+                    lng: 139.7673068,
                 },
-                zoom:15
+                zoom: 15,
             },
         };
     },
@@ -42,7 +66,7 @@ export default {
                     this.success,
                     this.error
                 );
-                console.log('きてるよ');
+                console.log("きてるよ");
                 return;
             }
             // Geolocation API に対応していない場合、デフォルトの値でGoogleMapを表示する
@@ -58,7 +82,7 @@ export default {
 
             // マップ作成
             const mapOptions = { zoom: 15, center: center };
-            console.log('A');
+            console.log("A");
             const map = this.createMap(mapOptions);
 
             // 検索ボックスの初期化
@@ -67,7 +91,7 @@ export default {
         error(position) {},
         createMap(mapOptions) {
             return new google.maps.Map(
-                document.getElementById('map'),
+                document.getElementById("map"),
                 mapOptions
             );
         },

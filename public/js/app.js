@@ -16425,13 +16425,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _googlemaps_js_api_loader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @googlemaps/js-api-loader */ "./node_modules/@googlemaps/js-api-loader/dist/index.esm.js");
- // import { API_KEY } from "./googlemapapi.js";
+/* harmony import */ var _googlemapapi_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./googlemapapi.js */ "./resources/js/googlemapapi.js");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       loader: new _googlemaps_js_api_loader__WEBPACK_IMPORTED_MODULE_0__.Loader({
-        apiKey: "AIzaSyBIFXaIXYU0ZghFK-pn6qHRiyeNYlxE450",
+        apiKey: _googlemapapi_js__WEBPACK_IMPORTED_MODULE_1__.API_KEY,
         version: "weekly",
         libraries: ["places"]
       }),
@@ -16451,7 +16452,7 @@ __webpack_require__.r(__webpack_exports__);
       if (navigator.geolocation) {
         // Geolocation API に対応している場合は現在地からGoogleMapを表示する
         navigator.geolocation.getCurrentPosition(_this.success, _this.error);
-        console.log('きてるよ');
+        console.log("きてるよ");
         return;
       } // Geolocation API に対応していない場合、デフォルトの値でGoogleMapを表示する
 
@@ -16473,13 +16474,13 @@ __webpack_require__.r(__webpack_exports__);
         zoom: 15,
         center: center
       };
-      console.log('A');
+      console.log("A");
       var map = this.createMap(mapOptions); // 検索ボックスの初期化
       // this.initSearchBox(map);
     },
     error: function error(position) {},
     createMap: function createMap(mapOptions) {
-      return new google.maps.Map(document.getElementById('map'), mapOptions);
+      return new google.maps.Map(document.getElementById("map"), mapOptions);
     }
   }
 });
@@ -16499,25 +16500,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", {
-  "class": "title"
-}, "山口県 登山MAP", -1
-/* HOISTED */
-);
-
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  id: "map",
-  style: {
-    "height": "500px",
-    "width": "1100px"
-  }
-}, null, -1
-/* HOISTED */
-);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h1 class=\"title\">山口県 登山MAP</h1><div class=\"main\"><!-- ここにGooglemapを表示 --><div id=\"map\" style=\"height:500px;width:600px;\"></div><div class=\"menu\"><h2 class=\"menu-title\">情報</h2><ul><li><span class=\"item-heading\">山名</span><p></p></li><li><span class=\"item-heading\">標高</span><p></p></li><li><span class=\"item-heading\">駐車場</span><p></p></li><li><span class=\"item-heading\">備忘録</span><p></p></li></ul></div></div>", 2);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ここにGooglemapを表示 "), _hoisted_2]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [_hoisted_1]);
 }
+
+/***/ }),
+
+/***/ "./resources/js/googlemapapi.js":
+/*!**************************************!*\
+  !*** ./resources/js/googlemapapi.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "API_KEY": () => (/* binding */ API_KEY)
+/* harmony export */ });
+var API_KEY = "AIzaSyBIFXaIXYU0ZghFK-pn6qHRiyeNYlxE450";
 
 /***/ }),
 
@@ -16537,7 +16538,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.title {\n    text-align: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nli {\n    list-style: none;\n}\n.main {\n    display: flex;\n    justify-content: center;\n}\n.menu-title {\n    text-align: center;\n}\n.item-heading {\n    font-weight: bold;\n}\n.title {\n    text-align: center;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
