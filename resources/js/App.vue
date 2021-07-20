@@ -3,7 +3,7 @@
         <h1 class="title">山口県 登山MAP</h1>
         <div class="main">
         <!-- ここにGooglemapを表示 -->
-        <div id="map" style="height: 500px; width: 600px"></div>
+        <div id="map" style="height: 500px; width: 800px"></div>
         <div class="menu">
             <h2 class="menu-title">情報</h2>
             <ul>
@@ -18,12 +18,26 @@
 </template>
 
 <style>
+* {
+    /* 初期化 */
+    padding: 0;
+    margin: 0;
+}
 li {
     list-style: none;
 }
+.title {
+    margin: 35px 0px;
+}
+
 .main {
     display: flex;
     justify-content: center;
+}
+.menu {
+    width: 300px;
+    margin-left: 50px;
+    padding: 15px;
 }
 .menu-title {
     text-align: center;
